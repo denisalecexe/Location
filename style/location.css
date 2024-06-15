@@ -1,0 +1,65 @@
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px;
+}
+
+.location {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  position: relative;
+  animation: morph 4s infinite;
+}
+
+.location::before {
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(50%, 50%);
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    background-color: black;
+  }
+
+  .location {
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    position: relative;
+  }
+  
+  .location::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(50%, 50%);
+  }
+}
+
+@keyframes morph {
+  0% {
+    
+  }
+
+  100% {
+    border-radius: 50px;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+  }
+}
